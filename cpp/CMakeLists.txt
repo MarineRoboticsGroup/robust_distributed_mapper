@@ -6,14 +6,12 @@ add_definitions(-DLOG_DIR="${PROJECT_SOURCE_DIR}/..")
 
 ###########################################################################
 # Find GTSAM
-find_package(GTSAM REQUIRED)
+find_package(GTSAM REQUIRED )
 include_directories(${GTSAM_INCLUDE_DIR})
 link_directories(${GTSAM_LIBRARY_DIRS})
 message("GTSAM Libraries: ${GTSAM_LIBRARIES}")
 
 # for unittest examples
-set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${GTSAM_DIR}/../GTSAMCMakeTools")
-include(GtsamTesting)
 
 ###########################################################################
 # Find Boost
@@ -110,7 +108,7 @@ target_link_libraries (robust_distributed_optimization_example_2robots
 
 ###########################################################################
 # Tests
-add_subdirectory(tests)
+# add_subdirectory(tests)
 
 ###########################################################################
 # Install
